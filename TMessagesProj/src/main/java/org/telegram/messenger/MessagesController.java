@@ -6714,6 +6714,9 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public boolean isChatNoForwards(TLRPC.Chat chat) {
+        if (uz.unnarsx.cherrygram.core.configs.CherrygramPrivacyConfig.INSTANCE.getBypassRestrictions()) {
+            return false;
+        }
         if (chat == null) {
             return false;
         }
@@ -6727,18 +6730,30 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public boolean isChatNoForwards(long chatId) {
+        if (uz.unnarsx.cherrygram.core.configs.CherrygramPrivacyConfig.INSTANCE.getBypassRestrictions()) {
+            return false;
+        }
         return isChatNoForwards(getChat(chatId));
     }
 
     public boolean isPeerNoForwards(long dialogId) {
+        if (uz.unnarsx.cherrygram.core.configs.CherrygramPrivacyConfig.INSTANCE.getBypassRestrictions()) {
+            return false;
+        }
         return dialogId > 0 ? isUserNoForwards(dialogId) : isChatNoForwards(-dialogId);
     }
 
     public boolean isUserNoForwards(long userId) {
+        if (uz.unnarsx.cherrygram.core.configs.CherrygramPrivacyConfig.INSTANCE.getBypassRestrictions()) {
+            return false;
+        }
         return isUserNoForwards(getUserFull(userId));
     }
 
     public boolean isUserNoForwards(TLRPC.UserFull userFull) {
+        if (uz.unnarsx.cherrygram.core.configs.CherrygramPrivacyConfig.INSTANCE.getBypassRestrictions()) {
+            return false;
+        }
         if (userFull == null) {
             return false;
         }
@@ -11425,6 +11440,9 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public boolean sendTyping(long dialogId, long threadMsgId, int action, String emojicon, int classGuid) {
+        if (uz.unnarsx.cherrygram.core.configs.CherrygramPrivacyConfig.INSTANCE.getHideTyping()) {
+            return false;
+        }
         if (action < 0 || action >= sendingTypings.length || dialogId == 0) {
             return false;
         }

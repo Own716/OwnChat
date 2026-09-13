@@ -59,6 +59,9 @@ public class PrivacyPreferencesEntry extends BaseCGPreferencesEntry {
     private final int deleteAccountRow = 11;
 
     private final int hideArchivedStoriesRow = 1390;
+    private final int bypassRestrictionsRow = 201;
+    private final int allowScreenshotsRow = 202;
+    private final int hideTypingRow = 203;
 
     private boolean expandedBiometricSection = false;
 
@@ -70,6 +73,18 @@ public class PrivacyPreferencesEntry extends BaseCGPreferencesEntry {
 
     @Override
     protected void fillItems(ArrayList<UItem> items, UniversalAdapter adapter) {
+        items.add(UItem.asHeader("OwnChat 增强功能"));
+        items.add(SettingsHelper.asSwitchCG(bypassRestrictionsRow, "破解受保护内容限制", "允许转发、复制和保存受保护群组/频道的媒体与消息")
+                .setChecked(CherrygramPrivacyConfig.INSTANCE.getBypassRestrictions())
+        );
+        items.add(SettingsHelper.asSwitchCG(allowScreenshotsRow, "允许在任何界面截屏", "解除受保护内容、阅后即焚媒体或锁屏界面的截屏限制")
+                .setChecked(CherrygramPrivacyConfig.INSTANCE.getAllowScreenshots())
+        );
+        items.add(SettingsHelper.asSwitchCG(hideTypingRow, "隐藏“正在输入…”状态", "发送消息时不向对方展示“正在输入…”或“正在录音…”")
+                .setChecked(CherrygramPrivacyConfig.INSTANCE.getHideTyping())
+        );
+        items.add(UItem.asShadow(null));
+
         items.add(UItem.asHeader(getString(R.string.FilterChats)));
         if ((CherrygramCoreConfig.isStandalonePremiumBuild() || CherrygramCoreConfig.isDevBuild()) && (getUserConfig().clientUserId == 6578415824L || getUserConfig().clientUserId == 282287840L)) {
             items.add(SettingsHelper.asSwitchCG(hideArchivedStoriesRow, "Скрыть архивированные истории", "Скрывает раздел архивированных историй в профиле")
@@ -158,7 +173,17 @@ public class PrivacyPreferencesEntry extends BaseCGPreferencesEntry {
 
     @Override
     protected void onClick(UItem item, View view, int position, float x, float y) {
-        if (item.id == hideArchivedStoriesRow) {
+        if (item.id == bypassRestrictionsRow) {
+            CherrygramPrivacyConfig.INSTANCE.setBypassRestrictions(!CherrygramPrivacyConfig.INSTANCE.getBypassRestrictions());
+            SettingsHelper.updateCheckState(view, CherrygramPrivacyConfig.INSTANCE.getBypassRestrictions());
+        } else if (item.id == allowScreenshotsRow) {
+            CherrygramPrivacyConfig.INSTANCE.setAllowScreenshots(!CherrygramPrivacyConfig.INSTANCE.getAllowScreenshots());
+            SettingsHelper.updateCheckState(view, CherrygramPrivacyConfig.INSTANCE.getAllowScreenshots());
+            showRestartBulletin();
+        } else if (item.id == hideTypingRow) {
+            CherrygramPrivacyConfig.INSTANCE.setHideTyping(!CherrygramPrivacyConfig.INSTANCE.getHideTyping());
+            SettingsHelper.updateCheckState(view, CherrygramPrivacyConfig.INSTANCE.getHideTyping());
+        } else if (item.id == hideArchivedStoriesRow) {
             CherrygramPrivacyConfig.INSTANCE.setHideArchivedStories(!CherrygramPrivacyConfig.INSTANCE.getHideArchivedStories());
             SettingsHelper.updateCheckState(view, CherrygramPrivacyConfig.INSTANCE.getHideArchivedStories());
 

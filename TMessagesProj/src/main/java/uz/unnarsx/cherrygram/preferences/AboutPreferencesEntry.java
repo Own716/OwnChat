@@ -66,7 +66,7 @@ public class AboutPreferencesEntry extends BaseCGPreferencesEntry {
                 SettingsHelper.asTextDetail(
                         readmeRow,
                         0,
-                        CGResourcesHelper.getAppName() + " " + CGResourcesHelper.getCherryVersion() + " | " + "Telegram " + BuildVars.BUILD_VERSION_STRING,
+                        CGResourcesHelper.getAppName() + " v" + CGResourcesHelper.getCherryVersion() + " 正式版",
                         getString(R.string.CGP_About_Desc)
                 )
         );

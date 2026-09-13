@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by t.me/arsLan-->
     <string name="CG_FollowChannelTitle">订阅官方频道</string>
@@ -141,7 +141,7 @@
     <!--OwnChat screens-->
     <!--OwnChat Preferences-->
     <string name="CGP_AdvancedSettings">自定义偏好</string>
-    <string name="CGP_About_Desc">实验性的 Telegram 应用程序修改。点击此处阅读应用程序的特性列表。</string>
+    <string name="CGP_About_Desc">功能强大且安全的即时通讯客户端。点击此处查看特性列表。</string>
     <string name="CGP_Header_About">关于 OwnChat</string>
     <string name="CGP_Header_About_Desc">更新、源代码及更多</string>
     <string name="CGP_Links">链接</string>

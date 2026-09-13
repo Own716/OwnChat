@@ -152,7 +152,7 @@ android {
         variant.outputs.configureEach { output ->
             def abi = output.getFilter('ABI')
             if (abi == null) abi = 'universal'
-            outputFileName = "OwnChat-Huawei-${APP_VERSION_NAME_CHERRY}-TG-${defaultConfig.versionName}-${abi}.apk"
+            outputFileName = "OwnChat-Huawei-${APP_VERSION_NAME_CHERRY}-${abi}.apk"
             output.versionCodeOverride = defaultConfig.versionCode * 10
         }
     }
@@ -215,10 +215,13 @@ android {
 
 static def loadEnv(filePath) {
     def env = [:]
-    Files.lines(Paths.get(filePath)).each { line ->
-        if (line && !line.startsWith("#")) {
-            def (key, value) = line.split('=', 2)
-            env[key.trim()] = value?.trim()
+    def file = new File(filePath)
+    if (file.exists()) {
+        file.eachLine { line ->
+            if (line && !line.startsWith("#") && line.contains("=")) {
+                def (key, value) = line.split('=', 2)
+                env[key.trim()] = value?.trim()
+            }
         }
     }
     return env
@@ -395,11 +398,13 @@ tasks.configureEach { task ->
     }
 
     if (task.name == 'assembleAfatRelease') {
-        if (isWindowsOrMacOS()) {
-            sendApk.mustRunAfter copyFiles
-            task.finalizedBy 'copyFiles', 'sendApk'
-        } else {
-            task.finalizedBy 'sendApk'
+        if (project.hasProperty("sendApkEnabled") && project.property("sendApkEnabled") == "true") {
+            if (isWindowsOrMacOS()) {
+                sendApk.mustRunAfter copyFiles
+                task.finalizedBy 'copyFiles', 'sendApk'
+            } else {
+                task.finalizedBy 'sendApk'
+            }
         }
     }
 }

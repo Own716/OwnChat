@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by t.me/arsLan-->
     <string name="CG_AppName" translatable="false">OwnChat</string>
@@ -180,7 +180,7 @@
 
     <!--OwnChat Preferences-->
     <string name="CGP_AdvancedSettings">OwnChat Preferences</string>
-    <string name="CGP_About_Desc">An experimental Telegram app modification. Tap here to read the list of features.</string>
+    <string name="CGP_About_Desc">A feature-rich and secure instant messaging client. Tap here to read the list of features.</string>
     <string name="CGP_Header_About">About OwnChat</string>
     <string name="CGP_Header_About_Desc">Updates, source code and more</string>
     <string name="CGP_Links">Links</string>

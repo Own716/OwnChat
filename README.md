@@ -1,40 +1,53 @@
-# 💬 OwnChat
+# 软件介绍
 
-OwnChat is a customized third-party Telegram client for Android, based on Cherrygram and the official Telegram App for Android.
+**OwnChat** 是一款功能丰富、安全私密、高度可定制的现代化移动即时通讯客户端。在提供毫秒级实时通讯的基础上，集成了全方位的隐私保护、限制解除、消息增强及外观定制能力，为您带来自由流畅的沟通体验。
 
-- **GitHub Repository**: [https://github.com/Own716/OwnChat](https://github.com/Own716/OwnChat)
-- **Base Project**: [Cherrygram](https://github.com/arsLan4k1390/Cherrygram) & [Telegram App for Android](https://github.com/DrKLO/Telegram)
+---
 
-## Maintainers
+## 核心功能特色
 
-- [Own716](https://github.com/Own716)
+### 🛡️ 隐私与安全保护
+- **无痕已读（幽灵模式）**：自由阅读聊天消息而不触发已读标记，从容掌控阅读节奏。
+- **隐藏输入状态**：在撰写消息时不向对方发送“正在输入...”提示，保护实时动态。
+- **防撤回与消息留存**：即使对方撤回或删除了消息，本地依然完整留存记录，避免信息丢失。
+- **密码与生物识别锁**：支持系统级指纹、面容或应用锁保护，可针对特定私密会话或归档聊天单独上锁。
+- **隐藏归档会话**：在会话列表中深度隐藏归档，防止窥屏与误触。
 
-## API & Protocol Documentation
+### 🔓 突破限制与自由掌控
+- **解除防截屏限制**：突破受保护聊天、私密对话中禁止屏幕截图和屏幕录制的限制。
+- **自由保存与转发受限媒体**：解除频道或群组禁止保存、禁止转发的限制，支持直接保存图片、视频和文件至本地相册。
+- **自毁媒体留存**：查看即焚或限制倒计时的图片与视频时不受时间限制，自由随心查阅。
+- **全局文本自由复制**：随时自由长按选择、提取与复制聊天中的任意文本。
 
-Telegram API manuals: https://core.telegram.org/api
+### 💬 消息增强与便捷交互
+- **去引用转发 / 纯净转发**：转发消息时一键隐去原发送者信息或配文，保护信息来源隐私。
+- **双向快速自删**：支持一键清空自己发送过的所有历史消息，不留痕迹。
+- **双击与滑动快捷手势**：支持自定义消息双击或滑动手势动作（快捷回复、快速翻译、收藏保存、直接分享等）。
+- **消息智能多重过滤器**：根据关键词、发信人或消息类型智能折叠、静音或过滤无关内容。
+- **多引擎实时翻译**：长按或双击即时将外语消息翻译为您的母语，跨语言沟通毫无障碍。
 
-MTproto protocol manuals: https://core.telegram.org/mtproto
+### 🎨 界面与个性化定制
+- **底部导航栏与标签页**：支持在屏幕底部显示文件夹面板，自定义标签页顺序与隐藏不需要的选项卡。
+- **标题与视觉居中**：操作栏标题完美居中，支持平滑材质切换与高级毛玻璃特效。
+- **专属应用图标与主题**：内置多套高品质应用图标与主题色调，支持跟随系统暗色模式自适应。
+- **个人资料详细信息**：在名片页直观展示用户唯一 ID、所在数据中心（DC）及精确到秒的时间戳。
 
-## Compilation Guide
+### ⚡ 极速网络与多账号管理
+- **无缝多账号管理**：支持快速添加并切换多个独立账号，通知即时送达。
+- **下载与上传倍增加速**：内置并发多线程网络连接加速引擎，大幅提升大文件、视频的加载与传输效率。
+- **智能缓存清理**：按会话、文件类型精准管理本地存储空间，轻松释放设备存储。
 
-You will require Android Studio 2025.1.4+, Android NDK 27.2.12479018, and Android SDK 36.
+---
 
-1. Clone the OwnChat source code with its submodules:
-   ```bash
-   git clone --recursive --shallow-submodules https://github.com/Own716/OwnChat.git OwnChat
-   ```
-   In case submodules were not initialized, run:
-   ```bash
-   git submodule init && git submodule update --init --recursive --depth=1
-   ```
-2. Configure your signing keystore (`storeFile`, `storePassword`, `keyAlias`, `keyPassword`) in module build.gradle files (`TMessagesProj_App`, `TMessagesProj_AppHuawei`, `TMessagesProj_AppStandalone`).
-3. (Optional) In Firebase Console, create an Android app with application ID `org.ownchat.messenger`, enable Firebase Cloud Messaging, and place `google-services.json` in the `TMessagesProj` directory.
-4. Open the project in Android Studio (use **Open**, not **Import**).
-5. Customize `TMessagesProj/src/main/java/uz/unnarsx/cherrygram/Extra.kt` with your Telegram API ID and Hash.
-6. Build and enjoy OwnChat!
+## 版本更新
 
+### v1.0.0 正式版
+- **全新发布**：软件全面上线，完成底层架构优化与专属功能集成。
+- **全功能集合**：完整接入隐私防护、限制解除、消息增强及外观个性化等全套功能。
+- **性能提升**：优化网络资源传输效率，大幅降低内存占用与功耗。
 
-## Thanks to:
-- [Catogram](https://github.com/Catogram/Catogram) and [Nekogram](https://gitlab.com/Nekogram/Nekogram)
-- [exteraGram](https://github.com/exteraSquad/exteraGram) and [OwlGram](https://github.com/OwlGramDev/OwlGram)
-- [Telegraher](https://github.com/nikitasius/Telegraher) and [Telegram Monet](https://github.com/c3r5b8/Telegram-Monet)
+---
+
+## 安装包下载
+
+您可以在本仓库的 **Releases 页面** 或 **Actions 构件库** 中直接下载最新编译生成的 `OwnChat.apk` 安装包并安装到手机。

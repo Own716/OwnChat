@@ -70,6 +70,93 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119732785963:android:3d2936d504329fd9dc2b6e",
+        "android_client_info": {
+          "package_name": "org.ownchat.messenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "119732785963-ooptebss6v859a1ojsqn05j6oejon5ug.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpK6z0FjTLlFLlMEh2hyY5VSRebsFB1n4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "119732785963-ooptebss6v859a1ojsqn05j6oejon5ug.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119732785963:android:3d2936d504329fd9dc2b6e",
+        "android_client_info": {
+          "package_name": "org.ownchat.messenger.web"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "119732785963-ooptebss6v859a1ojsqn05j6oejon5ug.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpK6z0FjTLlFLlMEh2hyY5VSRebsFB1n4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "119732785963-ooptebss6v859a1ojsqn05j6oejon5ug.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119732785963:android:3d2936d504329fd9dc2b6e",
+        "android_client_info": {
+          "package_name": "org.ownchat.messenger.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "119732785963-ooptebss6v859a1ojsqn05j6oejon5ug.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpK6z0FjTLlFLlMEh2hyY5VSRebsFB1n4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "119732785963-ooptebss6v859a1ojsqn05j6oejon5ug.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

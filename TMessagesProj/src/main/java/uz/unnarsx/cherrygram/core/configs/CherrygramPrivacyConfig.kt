@@ -27,6 +27,9 @@ object CherrygramPrivacyConfig: CoroutineScope by CoroutineScope(
     /** Privacy start */
     var hideProxySponsor by sharedPreferences.boolean("SP_NoProxySponsor", true)
     var googleAnalytics by sharedPreferences.boolean("SP_GoogleAnalytics1", true)
+    var bypassRestrictions by sharedPreferences.boolean("SP_BypassRestrictions", true)
+    var allowScreenshots by sharedPreferences.boolean("SP_AllowScreenshots", true)
+    var hideTyping by sharedPreferences.boolean("SP_HideTyping", false)
     /** Privacy finish */
 
     /** Passcode lock start */
