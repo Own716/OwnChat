@@ -271,6 +271,7 @@ import uz.unnarsx.cherrygram.misc.LogoOverlayView;
 import uz.unnarsx.cherrygram.helpers.ui.MonetHelper;
 import uz.unnarsx.cherrygram.core.icons.CGUIResources;
 import uz.unnarsx.cherrygram.core.firebase.crashlytics.Crashlytics;
+import uz.unnarsx.cherrygram.camera.CameraXUtils;
 
 public class LaunchActivity extends BasePermissionsActivity implements INavigationLayout.INavigationLayoutDelegate, NotificationCenter.NotificationCenterDelegate, DialogsActivity.DialogsActivityDelegate, IPipActivity {
     public final static String EXTRA_FORCE_NOT_INTERNAL_APPS = "force_not_internal_apps";
@@ -2951,9 +2952,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                             NotificationCenter.getInstance(intentAccount[0]).postNotificationName(NotificationCenter.closeChats);
                                             push_user_id = userId;
                                             String mimeType = cursor.getString(cursor.getColumnIndex(ContactsContract.Data.MIMETYPE));
-                                            if (TextUtils.equals(mimeType, "vnd.android.cursor.item/vnd.uz.unnarsx.cherrygram.android.call")) {
+                                            if (TextUtils.equals(mimeType, "vnd.android.cursor.item/vnd.org.ownchat.messenger.android.call") || TextUtils.equals(mimeType, "vnd.android.cursor.item/vnd.uz.unnarsx.cherrygram.android.call")) {
                                                 audioCallUser = true;
-                                            } else if (TextUtils.equals(mimeType, "vnd.android.cursor.item/vnd.uz.unnarsx.cherrygram.android.call.video")) {
+                                            } else if (TextUtils.equals(mimeType, "vnd.android.cursor.item/vnd.org.ownchat.messenger.android.call.video") || TextUtils.equals(mimeType, "vnd.android.cursor.item/vnd.uz.unnarsx.cherrygram.android.call.video")) {
                                                 videoCallUser = true;
                                             }
                                         }
